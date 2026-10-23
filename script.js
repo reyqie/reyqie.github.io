@@ -2,20 +2,20 @@
 const themes = {
     sakura: {
         particles: [
-            { type: 'sakura', count: 15, container: 'sakura-container' },
-            { type: 'snow', count: 25, container: 'snow-container' }
+            { type: 'sakura', count: 8, container: 'sakura-container' }, // Reduced from 15
+            { type: 'snow', count: 12, container: 'snow-container' } // Reduced from 25
         ]
     },
     ocean: {
         particles: [
-            { type: 'bubble', count: 20, container: 'sakura-container' },
-            { type: 'fish', count: 8, container: 'snow-container' }
+            { type: 'bubble', count: 10, container: 'sakura-container' }, // Reduced from 20
+            { type: 'fish', count: 4, container: 'snow-container' } // Reduced from 8
         ]
     },
     space: {
         particles: [
-            { type: 'star', count: 30, container: 'sakura-container' },
-            { type: 'planet', count: 5, container: 'snow-container' }
+            { type: 'star', count: 15, container: 'sakura-container' }, // Reduced from 30
+            { type: 'planet', count: 3, container: 'snow-container' } // Reduced from 5
         ]
     }
 };
@@ -84,7 +84,7 @@ document.querySelectorAll('.theme-btn').forEach(btn => {
 
         // Update logo
         const logo = document.querySelector('.logo');
-        if (theme === 'sakura') logo.textContent = '桜';
+        if (theme === 'sakura') logo.textContent = '🌸';
         else if (theme === 'ocean') logo.textContent = '🌊';
         else if (theme === 'space') logo.textContent = '✦';
 
@@ -103,8 +103,10 @@ createParticles(currentTheme);
 
 // Update logo on load
 const logo = document.querySelector('.logo');
-if (currentTheme === 'ocean') logo.textContent = '🌊';
+if (currentTheme === 'sakura') logo.textContent = '🌸';
+else if (currentTheme === 'ocean') logo.textContent = '🌊';
 else if (currentTheme === 'space') logo.textContent = '✦';
+else logo.textContent = '🌸'; // Default to sakura
 
 // Nav scroll effect
 const nav = document.querySelector('nav');

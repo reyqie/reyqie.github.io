@@ -1,0 +1,111 @@
+/* Mobile Sidebar Theme Dynamic Styles */
+
+/* Sakura Theme (default) */
+@media (max-width: 968px) {
+    .nav-links {
+        background: linear-gradient(135deg,
+            rgba(255, 107, 157, 0.15),
+            rgba(255, 214, 224, 0.15)) !important;
+        border-left: 3px solid rgba(255, 182, 197, 0.5) !important;
+        box-shadow: -10px 0 50px rgba(255, 107, 157, 0.3) !important;
+    }
+
+    .nav-links::before {
+        background: linear-gradient(180deg,
+            rgba(255, 107, 157, 0.25),
+            transparent) !important;
+    }
+
+    .nav-links::after {
+        content: '🌸' !important;
+    }
+
+    .nav-links a {
+        background: rgba(255, 182, 197, 0.1) !important;
+    }
+
+    .nav-links a::before {
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 182, 197, 0.3),
+            transparent) !important;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 107, 157, 0.2) !important;
+        border-color: #ffb7c5 !important;
+        box-shadow: 0 5px 20px rgba(255, 107, 157, 0.4) !important;
+    }
+
+    /* Ocean Theme */
+    body[data-theme="ocean"] .nav-links {
+        background: linear-gradient(135deg,
+            rgba(56, 189, 248, 0.15),
+            rgba(100, 255, 218, 0.15)) !important;
+        border-left-color: rgba(100, 255, 218, 0.5) !important;
+        box-shadow: -10px 0 50px rgba(56, 189, 248, 0.4) !important;
+    }
+
+    body[data-theme="ocean"] .nav-links::before {
+        background: linear-gradient(180deg,
+            rgba(56, 189, 248, 0.25),
+            transparent) !important;
+    }
+
+    body[data-theme="ocean"] .nav-links::after {
+        content: '🌊' !important;
+    }
+
+    body[data-theme="ocean"] .nav-links a {
+        background: rgba(100, 255, 218, 0.1) !important;
+    }
+
+    body[data-theme="ocean"] .nav-links a::before {
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(100, 255, 218, 0.3),
+            transparent) !important;
+    }
+
+    body[data-theme="ocean"] .nav-links a:hover {
+        background: rgba(100, 255, 218, 0.2) !important;
+        border-color: #64ffda !important;
+        box-shadow: 0 5px 20px rgba(56, 189, 248, 0.4) !important;
+    }
+
+    /* Space Theme */
+    body[data-theme="space"] .nav-links {
+        background: linear-gradient(135deg,
+            rgba(139, 92, 246, 0.15),
+            rgba(167, 139, 250, 0.15)) !important;
+        border-left-color: rgba(167, 139, 250, 0.5) !important;
+        box-shadow: -10px 0 50px rgba(139, 92, 246, 0.4) !important;
+    }
+
+    body[data-theme="space"] .nav-links::before {
+        background: linear-gradient(180deg,
+            rgba(139, 92, 246, 0.25),
+            transparent) !important;
+    }
+
+    body[data-theme="space"] .nav-links::after {
+        content: '✨' !important;
+    }
+
+    body[data-theme="space"] .nav-links a {
+        background: rgba(167, 139, 250, 0.1) !important;
+    }
+
+    body[data-theme="space"] .nav-links a::before {
+        background: linear-gradient(90deg,
+            transparent,
+            rgba(167, 139, 250, 0.3),
+            transparent) !important;
+    }
+
+    body[data-theme="space"] .nav-links a:hover {
+        background: rgba(167, 139, 250, 0.2) !important;
+        border-color: #a78bfa !important;
+        box-shadow: 0 5px 20px rgba(139, 92, 246, 0.4) !important;
+    }
+}

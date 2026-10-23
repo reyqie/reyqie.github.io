@@ -1,0 +1,54 @@
+/* Performance Optimization CSS */
+
+/* Reduce particle animations on mobile */
+@media (max-width: 768px) {
+    .sakura-container,
+    .snow-container {
+        display: none !important; /* Disable animations on mobile */
+    }
+}
+
+/* Use will-change for smooth animations */
+.project-card,
+.skill-item,
+.cert-card {
+    will-change: transform;
+}
+
+.nav-links {
+    will-change: right;
+}
+
+.burger {
+    will-change: transform;
+}
+
+/* Reduce backdrop-filter on older devices */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .sakura-container,
+    .snow-container {
+        display: none !important;
+    }
+}
+
+/* Optimize images rendering */
+img {
+    content-visibility: auto;
+}
+
+/* Reduce expensive effects on low-end devices */
+@media (max-width: 768px) {
+    .nav-inner::before {
+        display: none; /* Remove shine animation */
+    }
+
+    .orb {
+        filter: blur(40px) !important; /* Reduce blur intensity */
+    }
+}
