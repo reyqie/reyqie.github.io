@@ -45,6 +45,8 @@ body {
     color: var(--text-primary);
     overflow-x: hidden;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 body::before {
@@ -78,8 +80,8 @@ body::before {
     overflow: hidden;
 }
 
-.sakura-container { z-index: 1; }
-.snow-container { z-index: 1; }
+.sakura-container { z-index: 1 !important; }
+.snow-container { z-index: 1 !important; }
 
 .sakura {
     position: absolute;
@@ -244,7 +246,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     background: rgba(26, 26, 46, 0.4);
-    backdrop-filter: blur(20px);
     border-radius: 50px;
     border: 1px solid rgba(255, 182, 197, 0.2);
     box-shadow: 0 8px 32px rgba(255, 107, 157, 0.1);
@@ -295,7 +296,6 @@ nav.scrolled .nav-inner {
     display: flex;
     gap: 0.5rem;
     list-style: none;
-    position: relative;
     z-index: 1;
 }
 
@@ -563,6 +563,7 @@ nav.scrolled .nav-inner {
     position: relative;
     height: 500px;
     animation: fadeInUp 1s ease 0.3s both;
+    z-index: 10;
 }
 
 .orb {
@@ -577,6 +578,7 @@ nav.scrolled .nav-inner {
     filter: blur(80px);
     opacity: 0.3;
     animation: orbPulse 4s ease infinite;
+    z-index: 1;
 }
 
 @keyframes orbPulse {
@@ -616,8 +618,7 @@ nav.scrolled .nav-inner {
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
     animation: float 6s ease infinite;
-    position: relative;
-    z-index: 10;
+    z-index: 100;
 }
 
 .profile-img-full {
@@ -1424,25 +1425,27 @@ footer {
     }
 
     .nav-links {
-        position: fixed;
-        right: 0;
-        top: 0;
-        height: 100vh;
-        width: 75%;
-        background: rgba(26, 26, 46, 0.98);
-        backdrop-filter: blur(30px);
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transform: translateX(100%);
-        transition: transform 0.4s ease;
-        border-left: 2px solid rgba(255, 182, 197, 0.3);
-        gap: 2rem;
-        z-index: 9999;
+        position: fixed !important;
+        right: -100% !important;
+        top: 0 !important;
+        height: 100vh !important;
+        width: 75% !important;
+        background: rgba(13, 13, 26, 0.98) !important;
+        backdrop-filter: blur(30px) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        transition: right 0.4s ease !important;
+        border-left: 2px solid rgba(255, 182, 197, 0.3) !important;
+        gap: 2rem !important;
+        z-index: 99999 !important;
+        list-style: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     .nav-links.active {
-        transform: translateX(0);
+        right: 0 !important;
     }
 
     .nav-links a {
@@ -1450,8 +1453,8 @@ footer {
     }
 
     .burger {
-        display: flex;
-        z-index: 10000;
+        display: flex !important;
+        z-index: 100000 !important;
     }
 
     .burger.active .line1 {
@@ -1477,16 +1480,23 @@ footer {
 
     .hero-visual {
         height: 400px;
+        z-index: 10;
+    }
+
+    .orb {
+        z-index: 1;
     }
 
     .profile-card-full {
         width: 250px;
         height: 320px;
-        z-index: 20;
+        z-index: 100;
     }
 
     .float-chip {
-        z-index: 20;
+        z-index: 100;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
     }
 
     .cert-grid {

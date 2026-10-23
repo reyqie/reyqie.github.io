@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reyhan Haqiqi - Portfolio</title>
     <link rel="icon" href="assets/img/favicon.png" type="image/png">
+    <!-- Lazy load images for performance -->
+    <link rel="preload" href="assets/img/my-profile-img.JPG" as="image">
+    <link rel="preload" href="assets/img/favicon.png" as="image">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,7 +18,7 @@
 
     <nav>
         <div class="nav-inner">
-            <div class="logo">桜</div>
+            <div class="logo">RH</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -38,7 +41,7 @@
 
     <!-- HERO -->
     <section id="home" class="hero">
-        <span class="side-label left">春 · 桜 · 雪</span>
+        <span class="side-label left"></span>
         <span class="side-label right">PORTFOLIO — 2024</span>
 
         <div class="hero-grid">
@@ -98,7 +101,7 @@
             <div class="section-head">
                 <span class="section-num">01</span>
                 <div>
-                    <p class="section-kicker">自己紹介 · Introduce</p>
+                    <p class="section-kicker">Introduce</p>
                     <h2 class="section-title">About Me</h2>
                 </div>
             </div>
@@ -135,7 +138,7 @@
             <div class="section-head">
                 <span class="section-num">02</span>
                 <div>
-                    <p class="section-kicker">作品集 · Selected</p>
+                    <p class="section-kicker">Selected Projects</p>
                     <h2 class="section-title">Featured Projects</h2>
                 </div>
             </div>
@@ -143,7 +146,7 @@
             <div class="projects-grid">
                 <article class="project-card featured reai-card" data-project="product-1" data-details="1">
                     <div class="project-image">
-                        <img src="assets/img/portfolio/product-1.jpg" alt="ReAI">
+                        <img src="assets/img/portfolio/product-1.jpg" alt="ReAI" loading="lazy">
                         <span class="project-tag">Featured</span>
                         <span class="click-hint">👆 Click to view details</span>
                     </div>
@@ -157,7 +160,7 @@
 
                 <article class="project-card" data-project="product-2" data-details="1">
                     <div class="project-image">
-                        <img src="assets/img/portfolio/product-2.jpg" alt="C.IT">
+                        <img src="assets/img/portfolio/product-2.jpg" alt="C.IT" loading="lazy">
                         <span class="click-hint">👆 Click to view details</span>
                     </div>
                     <div class="project-info">
@@ -346,7 +349,7 @@
             <div class="section-head">
                 <span class="section-num">03</span>
                 <div>
-                    <p class="section-kicker">認定 · Achievements</p>
+                    <p class="section-kicker">Achievements</p>
                     <h2 class="section-title">Certifications & Workshops</h2>
                 </div>
             </div>
@@ -429,7 +432,7 @@
     <section id="contact">
         <div class="container">
             <div class="contact-panel">
-                <p class="section-kicker">04 · Contact</p>
+                <p class="section-kicker">Contact</p>
                 <h2 class="contact-title">Let's build something<br><span class="gradient">worth remembering.</span></h2>
                 <p class="contact-text">Currently available for freelance work and interesting projects. Based in
                     Sidoarjo, East Java. Say hello — I reply fast.</p>

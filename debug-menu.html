@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Mobile Menu</title>
+    <style>
+        body {
+            margin: 0;
+            background: #0d0d1a;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .debug {
+            background: rgba(255, 107, 157, 0.1);
+            border: 1px solid #ff6b9d;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+
+        .burger {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #ff6b9d;
+            padding: 15px;
+            cursor: pointer;
+            z-index: 100000;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .burger div {
+            width: 30px;
+            height: 3px;
+            background: white;
+        }
+
+        .nav-links {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            height: 100vh;
+            width: 75%;
+            background: rgba(255, 107, 157, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: right 0.4s ease;
+            z-index: 99999;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 2rem;
+            font-size: 1.5rem;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .log {
+            background: #1a1a2e;
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 3px solid #ff6b9d;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 Mobile Menu Debugger</h1>
+
+    <div class="burger" onclick="toggleMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <div class="debug">
+        <h2>Test Results:</h2>
+        <div id="log"></div>
+        <button onclick="runTests()" style="padding: 10px 20px; background: #ff6b9d; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px;">Run Tests</button>
+    </div>
+
+    <div class="debug">
+        <h3>Instructions:</h3>
+        <ol>
+            <li>Klik hamburger icon (kanan atas) - Menu harus muncul dari kanan</li>
+            <li>Klik "Run Tests" untuk lihat debug info</li>
+            <li>Jika ini bekerja, masalah ada di main portfolio</li>
+        </ol>
+    </div>
+
+    <script>
+        function log(msg, color = '#ff6b9d') {
+            const logDiv = document.getElementById('log');
+            const entry = document.createElement('div');
+            entry.className = 'log';
+            entry.style.borderLeftColor = color;
+            entry.textContent = new Date().toLocaleTimeString() + ': ' + msg;
+            logDiv.appendChild(entry);
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const wasActive = navLinks.classList.contains('active');
+            navLinks.classList.toggle('active');
+            const isActive = navLinks.classList.contains('active');
+
+            log(`Burger clicked! Active: ${wasActive} → ${isActive}`, isActive ? '#4ade80' : '#f87171');
+        }
+
+        function runTests() {
+            document.getElementById('log').innerHTML = '';
+
+            log('🔍 Running tests...', '#60a5fa');
+
+            const burger = document.querySelector('.burger');
+            const navLinks = document.querySelector('.nav-links');
+
+            log(`✓ Burger found: ${!!burger}`, burger ? '#4ade80' : '#f87171');
+            log(`✓ Nav links found: ${!!navLinks}`, navLinks ? '#4ade80' : '#f87171');
+
+            if (navLinks) {
+                const styles = window.getComputedStyle(navLinks);
+                log(`Position: ${styles.position}`);
+                log(`Right: ${styles.right}`);
+                log(`Z-index: ${styles.zIndex}`);
+                log(`Width: ${styles.width}`);
+                log(`Height: ${styles.height}`);
+                log(`Display: ${styles.display}`);
+                log(`Active class: ${navLinks.classList.contains('active')}`);
+            }
+
+            log('✅ Tests complete!', '#4ade80');
+        }
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+                log('Menu closed via link click', '#60a5fa');
+            });
+        });
+
+        // Auto run tests on load
+        setTimeout(runTests, 500);
+    </script>
+</body>
+</html>

@@ -148,7 +148,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Intersection Observer with stagger
+// Intersection Observer with stagger - DISABLED for faster load
+// Sections now visible immediately
+/*
 const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -170,6 +172,7 @@ document.querySelectorAll('section:not(.hero), .project-card, .skill-item').forE
     el.style.transition = `opacity 0.8s ease ${index * 0.1}s, transform 0.8s ease ${index * 0.1}s`;
     observer.observe(el);
 });
+*/
 
 // Scroll indicator
 const scrollIndicator = document.querySelector('.scroll-indicator');
