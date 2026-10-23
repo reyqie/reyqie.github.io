@@ -277,3 +277,42 @@ document.querySelectorAll('a, button, .project-card, .skill-item, .cta-btn').for
         cursorDot.style.background = 'var(--accent-1)';
     });
 });
+
+// Project Modal
+const modal = document.getElementById('projectModal');
+const modalGallery = document.getElementById('modalGallery');
+const modalClose = document.querySelector('.modal-close');
+const modalBackdrop = document.querySelector('.modal-backdrop');
+
+document.querySelectorAll('.project-card').forEach(card => {
+    card.addEventListener('click', function() {
+        const project = this.dataset.project;
+        const detailsCount = parseInt(this.dataset.details);
+
+        modalGallery.innerHTML = '';
+
+        for (let i = 1; i <= detailsCount; i++) {
+            const img = document.createElement('img');
+            img.src = `assets/img/portfolio/${project}-details-${i}.jpg`;
+            img.alt = `${project} detail ${i}`;
+            modalGallery.appendChild(img);
+        }
+
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+function closeModal() {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modalBackdrop.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+    }
+});
