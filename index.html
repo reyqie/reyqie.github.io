@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sakura-container" id="sakura-container"></div>
+    <div class="snow-container" id="snow-container"></div>
+
+    <nav>
+        <div class="nav-inner">
+            <div class="logo">桜</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <button class="theme-btn active" data-theme="sakura" title="Sakura Theme">🌸</button>
+                <button class="theme-btn" data-theme="ocean" title="Ocean Theme">🌊</button>
+                <button class="theme-btn" data-theme="space" title="Space Theme">🚀</button>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <span class="side-label left">春 · 桜 · 雪</span>
+        <span class="side-label right">PORTFOLIO — 2024</span>
+
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p class="eyebrow"><span class="dot"></span> Available for work</p>
+                <h1><span class="line">Your</span> <span class="line gradient">Name</span></h1>
+                <p class="subtitle">Full Stack Developer &amp; Creative Designer</p>
+                <p class="description">I craft immersive digital experiences where clean engineering meets quiet, considered design.</p>
+                <div class="hero-actions">
+                    <a href="#projects" class="cta-btn">View My Work <span class="arrow">→</span></a>
+                    <a href="#contact" class="ghost-btn">Get in Touch</a>
+                </div>
+                <div class="hero-stats">
+                    <div><strong>5+</strong><span>Years</span></div>
+                    <div><strong>40+</strong><span>Projects</span></div>
+                    <div><strong>12</strong><span>Awards</span></div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="orb"></div>
+                <div class="kanji-card">
+                    <span class="kanji">桜</span>
+                    <div class="kanji-meta">
+                        <span>SAKURA</span>
+                        <span>— 01</span>
+                    </div>
+                </div>
+                <div class="float-chip chip-a">UI / UX</div>
+                <div class="float-chip chip-b">✦ Creative</div>
+                <div class="float-chip chip-c">Node.js</div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>HTML · CSS</span><span>✦</span><span>JAVASCRIPT</span><span>✦</span>
+            <span>REACT</span><span>✦</span><span>NODE.JS</span><span>✦</span>
+            <span>PYTHON</span><span>✦</span><span>GIT</span><span>✦</span>
+            <span>HTML · CSS</span><span>✦</span><span>JAVASCRIPT</span><span>✦</span>
+            <span>REACT</span><span>✦</span><span>NODE.JS</span><span>✦</span>
+            <span>PYTHON</span><span>✦</span><span>GIT</span><span>✦</span>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">01</span>
+                <div>
+                    <p class="section-kicker">自己紹介 · Introduce</p>
+                    <h2 class="section-title">About Me</h2>
+                </div>
+                <span class="section-jp">私について</span>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">Hi, I'm a developer who believes the best interfaces feel <em>inevitable</em> — quiet, fast, and effortless.</p>
+                    <p>I build modern web applications with a focus on clean architecture and thoughtful interaction. Every pixel is deliberate, every transition earns its place.</p>
+                    <p>With 5+ years across front-end and back-end, I stay close to the craft — from database schemas to the last 2px of a button's glow.</p>
+                </div>
+
+                <div class="skills">
+                    <p class="skills-label">Tools I reach for</p>
+                    <div class="skill-grid">
+                        <div class="skill-item"><span class="glyph">01</span>HTML/CSS</div>
+                        <div class="skill-item"><span class="glyph">02</span>JavaScript</div>
+                        <div class="skill-item"><span class="glyph">03</span>React</div>
+                        <div class="skill-item"><span class="glyph">04</span>Node.js</div>
+                        <div class="skill-item wide"><span class="glyph">05</span>Python · Automation</div>
+                        <div class="skill-item"><span class="glyph">06</span>Git</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-head">
+                <span class="section-num">02</span>
+                <div>
+                    <p class="section-kicker">作品集 · Selected</p>
+                    <h2 class="section-title">Featured Projects</h2>
+                </div>
+                <span class="section-jp">作品</span>
+            </div>
+
+            <div class="projects-grid">
+                <article class="project-card featured">
+                    <div class="project-image">
+                        <div class="placeholder-img">PROJECT 01</div>
+                        <span class="project-tag">Featured</span>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-meta">Web App · 2024</p>
+                        <h3>Project Title One</h3>
+                        <p>A real-time collaboration platform built for distributed teams. Designed the interaction model and shipped the full stack in under eight weeks.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo <span>↗</span></a>
+                            <a href="#" class="project-link ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img">PROJECT 02</div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-meta">Mobile · 2023</p>
+                        <h3>Project Title Two</h3>
+                        <p>A calm banking companion with gesture-first navigation and offline-first sync.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo <span>↗</span></a>
+                            <a href="#" class="project-link ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-image">
+                        <div class="placeholder-img">PROJECT 03</div>
+                    </div>
+                    <div class="project-info">
+                        <p class="project-meta">Tooling · 2023</p>
+                        <h3>Project Title Three</h3>
+                        <p>Developer tooling that removed 40 minutes of build wait from every deploy cycle.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Demo <span>↗</span></a>
+                            <a href="#" class="project-link ghost">GitHub</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <div class="container">
+            <div class="contact-panel">
+                <span class="contact-kanji">連絡</span>
+                <p class="section-kicker">03 · Contact</p>
+                <h2 class="contact-title">Let's build something<br><span class="gradient">worth remembering.</span></h2>
+                <p class="contact-text">Currently available for freelance work and interesting projects. Say hello — I reply fast.</p>
+                <div class="contact-methods">
+                    <a href="mailto:your.email@example.com" class="contact-btn">Email Me <span class="arrow">→</span></a>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <span class="footer-mark">桜</span>
+            <p>&copy; 2024 Your Name. Built with care.</p>
+            <span class="footer-jp">雪 · 桜</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
