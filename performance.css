@@ -2,10 +2,7 @@
 
 /* Reduce particle animations on mobile */
 @media (max-width: 768px) {
-    .sakura-container,
-    .snow-container {
-        display: none !important; /* Disable animations on mobile */
-    }
+    /* Animations enabled but with reduced count in script.js */
 }
 
 /* Use will-change for smooth animations */

@@ -49,6 +49,14 @@ body {
     padding: 0;
 }
 
+html {
+    overflow-x: hidden;
+}
+
+* {
+    max-width: 100%;
+}
+
 body::before {
     content: '';
     position: fixed;
@@ -80,8 +88,8 @@ body::before {
     overflow: hidden;
 }
 
-.sakura-container { z-index: 1 !important; }
-.snow-container { z-index: 1 !important; }
+.sakura-container { z-index: 50 !important; }
+.snow-container { z-index: 51 !important; }
 
 .sakura {
     position: absolute;
@@ -1419,9 +1427,18 @@ footer {
 
 /* Mobile */
 @media (max-width: 968px) {
+    nav, nav.scrolled {
+        padding: 0;
+    }
+
     .nav-inner {
-        margin: 1rem;
-        padding: 0.8rem 1.2rem;
+        margin: 1rem !important;
+        padding: 0.8rem 1.2rem !important;
+    }
+
+    nav.scrolled .nav-inner {
+        margin: 1rem !important;
+        padding: 0.8rem 1.2rem !important;
     }
 
     .nav-links {
@@ -1473,6 +1490,11 @@ footer {
         display: none;
     }
 
+    .hero {
+        min-height: auto;
+        padding: 6rem 5% 3rem;
+    }
+
     .hero-grid {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1481,6 +1503,7 @@ footer {
     .hero-visual {
         height: 400px;
         z-index: 10;
+        position: relative;
     }
 
     .orb {
@@ -1490,13 +1513,19 @@ footer {
     .profile-card-full {
         width: 250px;
         height: 320px;
-        z-index: 100;
+        z-index: 5;
     }
 
     .float-chip {
-        z-index: 100;
+        z-index: 5;
         font-size: 0.7rem;
         padding: 0.4rem 0.8rem;
+    }
+
+    .marquee {
+        position: relative;
+        z-index: auto;
+        margin-top: 8rem;
     }
 
     .cert-grid {
