@@ -296,10 +296,17 @@ document.querySelectorAll('.project-card').forEach(card => {
 
         modalGallery.innerHTML = '';
 
+        // work-* projects use singular 'detail' and .png, others use plural 'details' and .jpg
+        const workMatch = project.match(/work-(\d+)/);
+        const detailWord = workMatch ? 'detail' : 'details';
+        const ext = workMatch ? 'png' : 'jpg';
+        const startNum = workMatch ? parseInt(workMatch[1]) : 1;
+
         for (let i = 1; i <= detailsCount; i++) {
             const img = document.createElement('img');
-            img.src = `assets/img/portfolio/${project}-details-${i}.jpg`;
-            img.alt = `${project} detail ${i}`;
+            const detailNum = workMatch ? startNum : i;
+            img.src = `assets/img/portfolio/${project}-${detailWord}-${detailNum}.${ext}`;
+            img.alt = `${project} detail ${detailNum}`;
             modalGallery.appendChild(img);
         }
 
