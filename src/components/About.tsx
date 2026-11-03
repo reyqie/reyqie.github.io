@@ -163,7 +163,7 @@ export function About() {
                             </blockquote>
                         </Reveal>
 
-                        <Reveal delay={0.08} className="mt-7">
+                        <Reveal delay={0.08} className="mt-7 min-w-0">
                             <CodeWindow />
                         </Reveal>
 
