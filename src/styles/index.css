@@ -171,14 +171,6 @@
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .footer-tagline-shimmer {
-    background-image: none;
-    color: rgba(255, 255, 255, 0.35);
-    animation: none;
-  }
-}
-
 @layer base {
   * {
     border-color: var(--color-line);
