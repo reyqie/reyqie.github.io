@@ -1,0 +1,15 @@
+services:
+    react-app:
+        build: .
+        container_name: react-development
+        ports:
+            - "5173:5173"
+        volumes:
+            - .:/app
+            - node_modules:/app/node_modules
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+        restart: unless-stopped
+
+volumes:
+    node_modules:
